@@ -5,13 +5,13 @@ class Solution {
         HashMap<Long, Integer> map = new HashMap<>();
         long sum = 0;
         long remaining = 0;
-        map.put(0L,0);
+        map.put(0L,1);
 
         for( int i = 0 ; i < nums.length ; i++){
 
             sum += nums[i];
 
-            if( sum == k) count++;
+            
 
             remaining = sum - k;
 
