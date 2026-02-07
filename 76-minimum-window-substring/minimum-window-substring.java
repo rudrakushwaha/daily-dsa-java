@@ -19,8 +19,11 @@ class Solution {
 
             char ch = s.charAt(r);
         
-            if( map.getOrDefault(ch, 0) > 0 ) count += 1;
-            map.put(ch, map.getOrDefault(ch, 0) - 1);
+            if( map.containsKey(ch)) {
+                if( map.get(ch) > 0 ) count += 1;
+
+                 map.put(ch, map.getOrDefault(ch, 0) - 1);
+            }
 
             while( count == m){
 
@@ -29,8 +32,14 @@ class Solution {
                     sIndex = l;
                 }
 
-                map.put(s.charAt(l), map.get(s.charAt(l)) + 1);
-                if( map.get(s.charAt(l)) > 0) count -= 1;
+                char leftChar = s.charAt(l);
+
+                if( map.containsKey(leftChar)) {
+                    map.put(leftChar, map.get(leftChar) + 1);
+
+
+                    if( map.get(leftChar) > 0) count -= 1;
+                }
 
                 l++;
 
