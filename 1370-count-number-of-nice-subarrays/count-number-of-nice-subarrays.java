@@ -3,17 +3,6 @@ class Solution {
         
         //==============APPPROACH 2==================
 
-        // for( int  num: nums){
-
-        //     if(num % 2 != 0) num = 1;
-        //     else num = 0;
-        // }
-        for( int i = 0 ; i < nums.length ; i++){
-
-            if( nums[i] % 2 != 0) nums[i] = 1;
-            else nums[i] = 0;
-        }
-
         return subArrCount(nums, k) - subArrCount(nums, k - 1);
 
 
@@ -46,10 +35,10 @@ class Solution {
 
         while( r < n){
 
-            sum += nums[r];
+            sum += (nums[r] % 2);
 
             while( sum > goal){
-                sum -= nums[l];
+                sum -= (nums[l] % 2);
                 l += 1;
             }
             count += (r - l + 1);
