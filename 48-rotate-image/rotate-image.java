@@ -1,23 +1,57 @@
 class Solution {
+
+    public void reverse(int[] row, int l , int r){
+
+        while( l <= r){
+
+            int temp = row[l];
+            row[l] = row[r];
+            row[r] = temp;
+            l++;
+            r--;
+        }
+    }
+    
+
     public void rotate(int[][] matrix) {
 
+        //==========approach 2============
         int n = matrix.length;
-        int[][] temp = new int[n][n];
 
-        for(int i = 0 ;i < n ; i++){
+        //transposing matrix
+        for(int i = 0 ; i < n - 1 ; i++){
 
-            for(int j = 0 ; j < n ; j++){
+            for( int j = i+1 ; j < n ; j++){
 
-                temp[j][n-i-1] = matrix[i][j];
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
             }
         }
-          for(int i = 0 ;i < n ; i++){
+        //reversing each row
+        for(int i = 0 ; i < n ; i++){
 
-            for(int j = 0 ; j < n ; j++){
-
-                matrix[i][j] = temp[i][j];
-            }
+            reverse(matrix[i], 0 , n-1);
         }
+
+        //=============APPROACH 1(BRUTEE)==========
+        // int n = matrix.length;
+        // int[][] temp = new int[n][n];
+
+        // for(int i = 0 ;i < n ; i++){
+
+        //     for(int j = 0 ; j < n ; j++){
+
+        //         temp[j][n-i-1] = matrix[i][j];
+        //     }
+        // }
+        //   for(int i = 0 ;i < n ; i++){
+
+        //     for(int j = 0 ; j < n ; j++){
+
+        //         matrix[i][j] = temp[i][j];
+        //     }
+        // }
         
     }
 }
