@@ -10,7 +10,7 @@ class Solution {
             map[s.charAt(r) - 'A']++;
             maxf = Math.max(maxf, map[s.charAt(r) - 'A']);
 
-            while( (r - l + 1) - maxf > k){
+            if( (r - l + 1) - maxf > k){
 
                 map[s.charAt(l) - 'A']--;
                 l++;
