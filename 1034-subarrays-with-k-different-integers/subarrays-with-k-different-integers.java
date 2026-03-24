@@ -28,6 +28,8 @@ class Solution {
 
     public int sub(int[] nums, int k) {
 
+        if( k == 0) return 0;
+
         int l = 0 , r = 0;
         int count = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
