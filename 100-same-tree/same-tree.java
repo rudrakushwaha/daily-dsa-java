@@ -20,7 +20,9 @@ class Solution {
         else if(p.val != q.val) return false;
 
         boolean leftCheck = isSameTree(p.left, q.left);
+        if(leftCheck == false) return false;
         boolean rightCheck = isSameTree(p.right, q.right);
+        if(rightCheck == false) return false;
 
         return leftCheck & rightCheck; 
 
