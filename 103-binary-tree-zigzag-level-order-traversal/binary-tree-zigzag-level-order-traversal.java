@@ -26,7 +26,7 @@ class Solution {
         while (!q.isEmpty()) {
 
             int size = q.size();
-            List<Integer> lvlOrder = new ArrayList<>();
+            LinkedList<Integer> lvlOrder = new LinkedList<>();
 
             for(int i = 0; i < size; i++) {
 
