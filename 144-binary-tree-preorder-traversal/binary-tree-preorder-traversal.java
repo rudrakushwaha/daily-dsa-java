@@ -16,20 +16,58 @@
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
 
-        if(root == null) return new ArrayList<>();
 
-        Stack<TreeNode> st = new Stack<>();
-        List<Integer> result = new ArrayList<>();
-        st.push(root);
-        while(!st.isEmpty()){
-
-            TreeNode preElement = st.pop();
-            result.add(preElement.val);
-
-            if(preElement.right != null) st.push(preElement.right);
-            if(preElement.left != null) st.push(preElement.left);
+        List<Integer> list = new ArrayList<>();
+        TreeNode current = root;    
+        
+        while(current != null){
+            
+            
+            if(current.left == null)
+            {
+                list.add(current.val);
+                current = current.right;
+            }
+            else{
+                
+                TreeNode prev = current.left;
+                
+                while( prev.right != null && prev.right != current)
+                {
+                    prev = prev.right;
+                }
+            
+                if(prev.right == null){
+                    prev.right = current;
+                    list.add(current.val);
+                    current = current.left;
+                }
+                else {
+                    prev.right = null;
+                   
+                    current = current.right;
+                }
+            }
+            
+            
         }
         
-        return result;
+        return list;
+
+        // if(root == null) return new ArrayList<>();
+
+        // Stack<TreeNode> st = new Stack<>();
+        // List<Integer> result = new ArrayList<>();
+        // st.push(root);
+        // while(!st.isEmpty()){
+
+        //     TreeNode preElement = st.pop();
+        //     result.add(preElement.val);
+
+        //     if(preElement.right != null) st.push(preElement.right);
+        //     if(preElement.left != null) st.push(preElement.left);
+        // }
+        
+        // return result;
     }
 }
