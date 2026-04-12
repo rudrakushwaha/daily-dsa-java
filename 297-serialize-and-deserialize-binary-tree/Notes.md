@@ -1,1 +1,1 @@
-<h2>serialize-and-deserialize-binary-tree Notes</h2><hr>[ Time taken: 27d 13hrs 44m 46s ]
+<h2>serialize-and-deserialize-binary-tree Notes</h2><hr>[ Time taken: 29d 20hrs 34m 13s ]
