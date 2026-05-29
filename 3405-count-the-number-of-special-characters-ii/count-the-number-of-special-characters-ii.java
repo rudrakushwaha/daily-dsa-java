@@ -1,6 +1,9 @@
 class Solution {
     public int numberOfSpecialChars(String word) {
 
+
+        //last lowercase index < first uppercase index
+        
         int [] lower = new int[26];
         int [] upper = new int[26];
 
