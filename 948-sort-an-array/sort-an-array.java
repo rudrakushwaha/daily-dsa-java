@@ -15,7 +15,7 @@ class Solution {
         mergeSort(nums, mid+1, high, temp);
 
         //this commented line is for optimization to skip merge sort if the arrays are sorted..beats 96%
-        // if(nums[mid] <= nums[mid+1]) return;
+         if(nums[mid] <= nums[mid+1]) return;
         merge(nums, low, mid, high, temp);
     }
 
