@@ -21,7 +21,7 @@ class Solution {
 
         int [] result = new int[k];
 
-        for(int i = k - 1 ; i >= 0; i--){
+        for(int i = 0 ; i < k; i++){
             result[i] = pq.poll().getKey();
         }
 
