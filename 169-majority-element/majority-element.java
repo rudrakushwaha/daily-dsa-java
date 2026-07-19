@@ -33,12 +33,8 @@ class Solution {
             }
         }
 
-        int cnt = 0;
-        for( int i = 0 ; i < nums.length ; i++){
-            if(currElem == nums[i]) cnt++;
-             if (cnt > max) return currElem;
-        }
+       
 
-        return -1;
+        return currElem;
     }
 }
