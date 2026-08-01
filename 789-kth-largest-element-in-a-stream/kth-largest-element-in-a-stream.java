@@ -10,6 +10,10 @@ class KthLargest {
 
         for(int num: nums){
             pq.offer(num);
+
+            if(pq.size() > k){
+                pq.poll();
+            }
         }
 
 
@@ -19,7 +23,7 @@ class KthLargest {
 
         pq.offer(val);
 
-        while(pq.size() > k){
+        if(pq.size() > k){
             pq.poll();
         }
 
