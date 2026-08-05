@@ -27,6 +27,9 @@ class Solution {
     }
         
     private int quickSelect(int[] nums, int low, int high, int targetIdx) {
+
+        if (low > high)
+            return -1;
         
         int pIndex = partitionIndex(nums, low, high, targetIdx);
 
