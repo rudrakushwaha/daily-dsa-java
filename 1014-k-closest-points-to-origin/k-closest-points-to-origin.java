@@ -11,13 +11,23 @@ class Solution {
             return distB - distA;
     });
 
-       for(int i = 0 ; i< n;i++){
+    //    for(int i = 0 ; i< n;i++){
            
-           int[] point = points[i];
-           int x2 = point[0];
-           int y2 = point[1];
+    //        int[] point = points[i];
+    //        int x2 = point[0];
+    //        int y2 = point[1];
 
-            pq.offer(new int[]{x2,y2});
+    //         pq.offer(new int[]{x2,y2});
+
+    //         if(pq.size() > k){
+    //             pq.poll();
+    //         }
+
+    //    }
+         for(int[] point : points){
+           
+
+            pq.offer(point);
 
             if(pq.size() > k){
                 pq.poll();
@@ -25,7 +35,13 @@ class Solution {
 
        }
 
-       return pq.toArray(new int[pq.size()][]);
-        
+       int[][] result = new int[k][2];
+
+       for(int i = 0 ; i < k; i++){
+        result[i] = pq.poll();
+       }
+
+    //    return pq.toArray(new int[pq.size()][]);
+        return result;
     }
 }
