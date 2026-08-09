@@ -50,7 +50,7 @@ class Solution {
 
             int size = q.size();
 
-            for(int it = 0 ; it < q.size() ; it++){
+            for(int it = 0 ; it < size ; it++){
 
                 int[] cell = q.poll();
                 int r = cell[0];
