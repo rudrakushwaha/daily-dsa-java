@@ -15,7 +15,6 @@ class Solution {
                 if(grid[i][j] == 1 && visited[i][j] != 1){
                     int cc = bfs(grid,m,n,visited, i, j, count);
                     maxCount = Math.max(cc, maxCount);
-                    count = 0;
                 }
             }
         }
