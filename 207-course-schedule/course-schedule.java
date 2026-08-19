@@ -3,6 +3,8 @@ class Solution {
 
         ArrayList<ArrayList<Integer>> cs = new ArrayList<>();   
         int[] inDegree = new int[numCourses];
+
+      
         
         for(int i = 0; i < numCourses; i++){
             cs.add(new ArrayList<>());
