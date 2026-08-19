@@ -2,6 +2,7 @@ class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
 
         ArrayList<ArrayList<Integer>> cs = new ArrayList<>();   
+        int[] inDegree = new int[numCourses];
         
         for(int i = 0; i < numCourses; i++){
             cs.add(new ArrayList<>());
@@ -9,20 +10,22 @@ class Solution {
 
         for(int[] course: prerequisites){
 
-            int a = course[1];
-            int b = course[0];
-            cs.get(a).add(b);
+            int cour = course[0];
+            int preReq = course[1];
+            cs.get(preReq).add(cour);
+
+            //we can find the inDegree here only
+            inDegree[cour]++;
         }
 
         Queue<Integer> q = new LinkedList<>();
-        int[] inDegree = new int[numCourses];
         
         //finding inDegrees
-        for(ArrayList<Integer> list : cs){
-            for(int num: list){
-                inDegree[num]++;
-            }
-        }
+        // for(ArrayList<Integer> list : cs){
+        //     for(int num: list){
+        //         inDegree[num]++;
+        //     }
+        // }
 
         //finding the first element to start with whose inDegree is zero
         for(int i = 0 ; i < numCourses; i++){
